@@ -18,11 +18,10 @@ class CreateTinTable extends Migration
             $table->string('name');
             $table->char('summary',100);
             $table->text('content');
-            $table->foreignId('id_theloai')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('id_loaitin')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_theloai')->references('id')->on('theloai')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_loaitin')->references('id')->on('loaitin')->onUpdate('cascade')->onDelete('cascade');
             $table->tinyInteger('status');
             $table->integer('views');
-            $table->tinyInteger('hot_news');
             $table->string('url_images');
             $table->timestamps();
         });

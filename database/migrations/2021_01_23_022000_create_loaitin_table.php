@@ -16,9 +16,8 @@ class CreateLoaitinTable extends Migration
         Schema::create('loaitin', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('order');
             $table->tinyInteger('status');
-            $table->foreignId('id_theloai')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_theloai')->references('id')->on('theloai')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

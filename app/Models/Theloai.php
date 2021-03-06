@@ -11,4 +11,7 @@ class Theloai extends Model
     protected $table = 'theloai';
     protected $guarded = ['id','created_at','updated_at'];
 
+    public function Loaitin(){
+        return $this->hasMany(Loaitin::class,'id_theloai');
+    }
 }

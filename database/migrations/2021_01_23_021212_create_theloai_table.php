@@ -16,8 +16,6 @@ class CreateTheloaiTable extends Migration
         Schema::create('theloai', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug');
-            $table->integer('order');
             $table->tinyInteger('status');
             $table->timestamps();
         });
